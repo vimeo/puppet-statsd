@@ -29,7 +29,7 @@ class statsd ($graphite_host, $graphite_port = 2003, $port = 8125, $debug = 0, $
 			content => template("statsd/statsd.js.erb");
 	}
 	exec { "restart-statsd":
-		require => file["/etc/init/statsd.conf"],
+		require => File["/etc/init/statsd.conf"],
 		subscribe  => [
 				File['/etc/init/statsd.conf'],
 				File['/etc/statsd.js'],
