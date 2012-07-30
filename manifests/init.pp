@@ -13,7 +13,9 @@ class statsd ($graphite_host, $graphite_port = 2003, $port = 8125, $debug = 0, $
 	exec { "npm-statsd":
 	      command => "/usr/bin/npm install -g statsd",
 	      refreshonly => true,
-		require => Package["npm"];
+	      require => Package["npm"],
+	      # you can trigger an update of statsd package by changing /etc/statsd.js, bit of a hack but works
+	      subscribe => File["/etc/statsd.js"] 
 	}
 
         file {
