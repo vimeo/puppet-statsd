@@ -38,6 +38,7 @@ class statsd ($graphite_host, $graphite_port = 2003, $port = 8125, $debug = 0, $
 				Exec['npm-statsd'],
 				Package['nodejs-compat-symlinks']
 			],
-		command => "/sbin/stop statsd; /sbin/start statsd";
+		command => "/sbin/stop statsd; /sbin/start statsd",
+		refreshonly => true
 	}
 }
