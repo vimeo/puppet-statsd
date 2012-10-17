@@ -17,4 +17,4 @@ stop on runlevel [016]
 # Automatically restart process if crashed
 respawn
 
-exec /usr/bin/node /usr/lib/nodejs/statsd/stats.js /etc/statsd.js
+exec /usr/bin/node <%= node_path %>/statsd/stats.js /etc/statsd.js
