@@ -1,14 +1,14 @@
 statsd module for puppet
 
 tries to implement some best practices:
- * use upstream centos packages to install node and npm
+ * use upstream centos or Ubuntu packages to install node and npm
  * use npm to install statsd
  * be as generic as possible (use parametrized class)
  * put config in /etc/statsd.js
  * put upstart initscript in /etc/init/statsd.conf , leverage "restart when process dies" feature
 
 dependencies:
- * currently only supports Centos 6 or higher (upstart)
+ * currently only supports Centos 6 or higher (upstart) or Ubuntu 12.04
  * the package nodejs-stable-release so that node/npm packages can be installed from the upstream nodejs repos
    (see https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
 
