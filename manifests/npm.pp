@@ -1,9 +1,9 @@
 class statsd::npm {
-  package { $statsd::params::runtimePackage:
+  package { $statsd::params::runtime_package:
     ensure => present;
 	}
 	package { $statsd::params::packages:
-    require => Package[$statsd::params::runtimePackage],
+    require => Package[$statsd::params::runtime_package],
     ensure => present;
 	}
 }
